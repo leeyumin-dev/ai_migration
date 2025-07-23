@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: orchestrator-agent
+  labels:
+    app: orchestrator-agent
+spec:
+  selector:
+    app: orchestrator-agent
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8003
+  type: ClusterIP
