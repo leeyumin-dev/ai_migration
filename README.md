@@ -36,11 +36,13 @@
 
 | 영역 | 기술 |
 |------|------|
+| OS | Ubuntu |
 | Frontend | React, Tailwind CSS, FileSaver |
-| Backend | Node.js, Express, Multer, JWT, Swagger |
-| AI 모델 | HuggingFace Transformers (CodeT5, StarCoder), Python |
+| Backend | SpringBoot, Swagger, Kafka |
+| DevOps/Cloud | AWS, Kubernetes, Docker |
+| AI 모델 | HuggingFace, CodeLLM(CodeT5, StarCoder) |
 | 인증 | GitHub OAuth2 |
-| 기타 | Python subprocess, zip 처리, 파일 변환 로직 |
+| 기타 | AST, SonarQube |
 
 ---
 
