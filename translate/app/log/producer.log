@@ -1,0 +1,9 @@
+2025-07-23 12:00:16,865 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:01:24,164 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:03:49,792 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:06:46,218 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:08:05,684 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:08:40,747 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:14:52,043 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:17:08,349 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}
+2025-07-23 12:18:41,588 - producer - INFO - Produced event to topic agent-res-topic: key = None         value = {"result": "\ubcc0\ud658\uc644\ub8cc"}

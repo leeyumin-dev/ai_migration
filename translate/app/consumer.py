@@ -3,12 +3,12 @@ import os
 from confluent_kafka import Consumer, KafkaException
 import json
 from log import Logger
-from agent import call_agent, build_agent
+from agent import call_agent
 load_dotenv()
 
 class MessageConsumer:
     def __init__(self):
-        self.logger = Logger(name='consumer').logger
+        self.logger = Logger(name='translate').logger
         self.broker = os.environ.get('KAFKA_SERVER')
         self.topic = os.environ.get('CONS_TOPIC')
         self.group_id = os.environ.get('GROUP_ID')
@@ -18,11 +18,12 @@ class MessageConsumer:
                                     'group.id': self.group_id, # consumer의 id
                                     'auto.offset.reset': self.auto_offset_reset  # 처음 실행시 가장 마지막 offset부터
                                 })
-        self.consumer.subscribe([t for t in self.topic.split(',')])
+        self.consumer.subscribe([self.topic])
 
     def consume(self):
         try:
             print(f"start consume: {self.topic}")
+
             while True:
                 message = self.consumer.poll(1.0)
                 if message is None:
@@ -41,9 +42,8 @@ class MessageConsumer:
             request = json.loads(message.value().decode('utf-8'))
 
             self.logger.info(f"{message.topic()} | key: {message.key()} | value: {request}")
-                        
-            if message.topic() == 'api-topic':
-                call_agent(request)
+            
+            call_agent(request)
 
         except Exception as e:
             self.logger.exception(e)

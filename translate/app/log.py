@@ -16,10 +16,9 @@ class Logger:
             # Stream handler
             stream_handler = logging.StreamHandler()
             stream_handler.setFormatter(formatter)
-            stream_handler.encoding = 'utf-8'
             self.logger.addHandler(stream_handler)
 
             # File handler
-            file_handler = logging.FileHandler(f'{self.directory}/{name}.log', encoding='utf-8')
+            file_handler = logging.FileHandler(f'{self.directory}/{name}.log')
             file_handler.setFormatter(formatter)
             self.logger.addHandler(file_handler)

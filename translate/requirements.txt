@@ -7,3 +7,5 @@ typing_extensions
 langchain_openai 
 langchain_core 
 langchain-community
+confluent-kafka
+python-dotenv
