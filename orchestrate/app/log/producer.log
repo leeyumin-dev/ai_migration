@@ -1,8 +1,0 @@
-2025-07-23 12:01:24,142 - producer - INFO - Produced event to topic translator-topic: key = None         value = {"id": 1234}
-2025-07-23 12:03:49,745 - producer - INFO - Produced event to topic translator-topic: key = None         value = {"id": 1234}
-2025-07-23 12:06:46,200 - producer - INFO - Produced event to topic translator-topic | key: None | value: b'{"id": 1234}'
-2025-07-23 12:08:05,667 - producer - INFO - Produced event to topic translator-topic | key: None | value: {'id': 1234}
-2025-07-23 12:08:40,725 - producer - INFO - Produced event to topic translator-topic | key: None | value: {'id': 1234}
-2025-07-23 12:14:52,024 - producer - INFO - Produced event to topic translator-topic | key: None | value: {'id': 1234}
-2025-07-23 12:17:08,336 - producer - INFO - Produced event to topic translator-topic | key: None | value: {'id': 1234}
-2025-07-23 12:18:41,576 - producer - INFO - Produced event to topic translator-topic | key: None | value: {'id': 1234}
