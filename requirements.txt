@@ -9,3 +9,9 @@ langchain_core
 langchain-community
 confluent-kafka
 python-dotenv
+openai
+faiss-cpu
+tiktoken
+pandas
+numpy
+tqdm
