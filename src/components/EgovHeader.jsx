@@ -134,8 +134,8 @@ function EgovHeader() {
           {/* 로그아웃 : 로그인 정보 있을때 */}
           {sessionUserId && (
             <>
-              <span className="person">{sessionUserName} </span> 님이,{" "}
-              {sessionUserSe}로 로그인하셨습니다.
+              <span className="person">{sessionUserName} </span> 님,{" "}
+              {sessionUserSe} 반갑습니다!.
               {sessionUserSe === "USR" && (
                 <NavLink
                   to={URL.MYPAGE_MODIFY}

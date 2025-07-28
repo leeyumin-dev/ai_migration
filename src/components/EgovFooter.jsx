@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logoFooterImg from "/assets/images/logo_footer_w.png";
+import logoFooterImg from "/assets/images/logo_footer_aivle.png";
 import logoFooterImgMobile from "/assets/images/logo_footer_m.png";
 import bannerImg_01 from "/assets/images/banner_w_01.png";
 import bannerImgMobile_01 from "/assets/images/banner_m_01.png";
@@ -19,14 +19,14 @@ function EgovFooter() {
         </h1>
         <div className="info">
           <p>
-            대표문의메일 : egovframeexample@gmail.com{" "}
+            GitHub : https://github.com/leeyumin-dev/ai_migration{" "}
             <span className="m_hide">|</span>
-            <br className="m_show" /> 대표전화 : 0000-0000 (000-0000-0000)
+            <br className="m_show" /> 대표전화 : 010-4463-5077
             <br />
-            호환성확인 : 000-0000-0000 | 교육문의 : 0000-0000-0000
+            Notion : https://www.notion.so/AI-Code-Migration-2297bde02a66809da989c76132e4cdc5?p=23e7bde02a668016996ac7a4802ebcef&pm=s | 교육문의 : 010-4463-5077
           </p>
           <p className="copy">
-            Copyright © 2021 Ministry Of The Interior And Safety. All Rights
+            Copyright © 2025 KT AIVLESCHOOL BIG PROJECT GROUP 10
             Reserved.
           </p>
         </div>
