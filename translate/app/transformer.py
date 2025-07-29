@@ -5,6 +5,10 @@ import faiss, json, numpy as np, pandas as pd
 from openai import OpenAI
 import tiktoken
 from analyzer.extract_code_block import extract_code_block
+from analyzer.framework_detector import FrameworkDetector
+from analyzer.dependency_filter import DependencyFilter
+from analyzer.external_usage_detector import ExternalUsageDetector
+from analyzer.comment_analyzer import CommentAnalyzer
 
 MAX_TOKENS = 8192
 EMBED_MODEL = "text-embedding-3-small"
@@ -37,6 +41,10 @@ def run_pipeline_with_rag(python_code: str, api_key: str):
         fewshot_block = "\n\n".join(examples)
         full_prompt = f"{prompt}\n\n다음은 참고할 Java 코드 예시입니다:\n\n{fewshot_block}\n\n변환된 Java 코드를 보여줘."
 
+        framework_info = FrameworkDetector(func["body"]).detect()
+        external_apis = ExternalUsageDetector(func["body"]).detect()
+        comments = CommentAnalyzer(func["body"]).detect()
+
         res = client.chat.completions.create(
             model="gpt-4",
             messages=[{"role": "user", "content": full_prompt}],
@@ -45,5 +53,10 @@ def run_pipeline_with_rag(python_code: str, api_key: str):
         output = res.choices[0].message.content
         code_only = extract_code_block(output, language="java")
         print(f"🔹 Function: {func['name']} ({func['role']})")
+        print(f"Detected imports  : {framework_info}")
+        print(f"External systems  : {external_apis}")
+        print(f"Comments          : {[c['comment'] for c in comments if c['function'] == func['name']]}")
+        print("Java 변환 결과:")
         print(code_only)
         print("=" * 100)
+
