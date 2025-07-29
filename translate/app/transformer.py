@@ -9,6 +9,7 @@ from analyzer.framework_detector import FrameworkDetector
 from analyzer.dependency_filter import DependencyFilter
 from analyzer.external_usage_detector import ExternalUsageDetector
 from analyzer.comment_analyzer import CommentAnalyzer
+from analyzer.directory_analyzer import DirectoryStructureAnalyzer
 
 MAX_TOKENS = 8192
 EMBED_MODEL = "text-embedding-3-small"
@@ -35,6 +36,10 @@ def run_pipeline_with_rag(python_code: str, api_key: str):
         func["role"] = mapper.infer_role(func)
         prompt = prompter.build_prompt(func)
 
+        path_meta = func.get("path") or "src/main/java/egovframework/com/cop/bbs/web/EgovBBSController.java"
+        dir_info = DirectoryStructureAnalyzer(path_meta).analyze()
+
+
         query_emb = client.embeddings.create(input=func["body"], model=EMBED_MODEL).data[0].embedding
         D, I = index.search(np.array([query_emb], dtype="float32"), k=TOP_K)
         examples = [f"{metadata_df.iloc[i]['title']}:\n{code_dict[metadata_df.iloc[i]['path']]}" for i in I[0]]
@@ -56,7 +61,10 @@ def run_pipeline_with_rag(python_code: str, api_key: str):
         print(f"Detected imports  : {framework_info}")
         print(f"External systems  : {external_apis}")
         print(f"Comments          : {[c['comment'] for c in comments if c['function'] == func['name']]}")
+        print(f"Domain            : {dir_info['domain']}")
+        print(f"Feature           : {dir_info['feature']}")
+        print(f"Layer             : {dir_info['layer']}")
+        print(f"Type              : {dir_info['type']}")
         print("Java 변환 결과:")
         print(code_only)
-        print("=" * 100)
 
