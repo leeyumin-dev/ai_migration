@@ -1,0 +1,89 @@
+.support_menu {
+  position: absolute;
+  top: 120px;  /* 기존보다 살짝 아래로 내림 */
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  padding: 40px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.support_menu.closed {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.support_menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.support_menu .inner.row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.support_menu .col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.support_menu .col h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.support_menu .col ul li {
+  margin-bottom: 8px;
+}
+
+.support_menu .col ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.support_menu .col ul li a:hover {
+  text-decoration: underline;
+}
+
+/* 햄버거 버튼과 동일한 스타일을 공유 */
+.btn,
+.btnAllMenu,
+.btnSupportClose {
+  font-family: inherit;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.btnSupportClose {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btnSupportClose:hover {
+  color: #007acc;
+  transform: scale(1.1);
+}

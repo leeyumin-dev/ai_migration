@@ -40,7 +40,7 @@ function EgovLeftNavInform() {
               to={URL.INFORM_GALLERY}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              사이트갤러리
+              Q&A
             </NavLink>
           </li>
         </ul>

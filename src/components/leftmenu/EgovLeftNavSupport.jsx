@@ -12,7 +12,7 @@ function EgovLeftNavSupport() {
               to={URL.SUPPORT_DOWNLOAD}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              자료실
+              변환
             </NavLink>
           </li>
           <li>
@@ -20,7 +20,7 @@ function EgovLeftNavSupport() {
               to={URL.SUPPORT_QNA}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              묻고답하기
+              보안
             </NavLink>
           </li>
           <li>
@@ -28,7 +28,7 @@ function EgovLeftNavSupport() {
               to={URL.SUPPORT_APPLY}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              서비스신청
+              챗봇
             </NavLink>
           </li>
         </ul>

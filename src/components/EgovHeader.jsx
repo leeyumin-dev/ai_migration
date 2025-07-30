@@ -4,6 +4,9 @@ import * as EgovNet from "@/api/egovFetch";
 
 import URL from "@/constants/url";
 import CODE from "@/constants/code";
+import "@/css/header.css";
+
+
 
 import logoImg from "/assets/images/logo_w.png";
 import logoImgMobile from "/assets/images/logo_m.png";
@@ -20,6 +23,7 @@ function EgovHeader() {
 
   const navigate = useNavigate();
 
+
   const logInHandler = () => {
     // 로그인 정보 없을 시
     navigate(URL.LOGIN);
@@ -29,6 +33,51 @@ function EgovHeader() {
     document.querySelector(".btnAllMenu").title = "전체메뉴 닫힘";
     document.querySelector(".all_menu.Mobile").classList.add("closed");
   };
+
+  /* 햄버거 버튼 method */
+  const toggleAllMenu = () => {
+    const isClosed = document.querySelector(".all_menu.WEB")?.classList.contains("closed");
+    const btn = document.querySelector(".btnAllMenu");
+
+    if (isClosed) {
+      btn?.classList.add("active");
+      btn.title = "전체메뉴 열림";
+      document.querySelector(".all_menu.WEB")?.classList.remove("closed");
+      document.querySelector(".all_menu.Mobile")?.classList.remove("closed");
+      document.querySelector(".support_menu")?.classList.add("closed"); // 고객지원 메뉴 닫기
+    } else {
+      btn?.classList.remove("active");
+      btn.title = "전체메뉴 닫힘";
+      document.querySelector(".all_menu.WEB")?.classList.add("closed");
+      document.querySelector(".all_menu.Mobile")?.classList.add("closed");
+      document.querySelector(".support_menu")?.classList.add("open"); // 고객지원 메뉴 닫기
+    }
+  };
+  const closeSupportMenu = () => {
+    document.querySelector(".support_menu")?.classList.remove("open");
+    document.querySelector(".support_menu")?.classList.add("closed");
+  };
+
+  const toggleSupportMenuOnly = () => {
+    const supportMenu = document.querySelector(".support_menu");
+    const isOpen = supportMenu?.classList.contains("open");
+
+    if (isOpen) {
+      supportMenu?.classList.remove("open");
+    } else {
+      supportMenu?.classList.add("open");
+      document.querySelector(".all_menu.WEB")?.classList.remove("open");
+      document.querySelector(".all_menu.WEB")?.classList.add("closed");
+      document.querySelector(".all_menu.Mobile")?.classList.add("closed");
+      
+    }
+
+    // 햄버거 버튼 active 상태도 해제
+    const btn = document.querySelector(".btnAllMenu");
+    btn?.classList.remove("active");
+    btn.title = "전체메뉴 닫힘";
+  };
+
   const logOutHandler = () => {
     // 로그인 정보 존재할 때
     const logOutUrl = "/auth/logout";
@@ -101,13 +150,16 @@ function EgovHeader() {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={URL.SUPPORT}
-                className={({ isActive }) => (isActive ? "cur" : "")}
-              >
-                고객지원
-              </NavLink>
+            <NavLink
+              to={URL.SUPPORT}
+              className={({ isActive }) => (isActive ? "cur" : "")}
+              onClick={toggleSupportMenuOnly}
+            >
+              고객지원
+            </NavLink>
+
             </li>
+
             <li>
               <NavLink
                 to={URL.INFORM}
@@ -189,7 +241,8 @@ function EgovHeader() {
         </div>
       </div>
 
-      {/* <!-- All menu : web --> */}
+          
+      {/*햄버거 버튼 누르면 열리는 전체 메뉴바*/}
       <div className="all_menu WEB closed">
         <h2 className="blind">전체메뉴</h2>
         <div className="inner">
@@ -259,7 +312,7 @@ function EgovHeader() {
                   to={URL.SUPPORT_DOWNLOAD}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
-                  자료실
+                  변환
                 </NavLink>
               </li>
               <li>
@@ -267,7 +320,7 @@ function EgovHeader() {
                   to={URL.SUPPORT_QNA}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
-                  묻고 답하기
+                  보안
                 </NavLink>
               </li>
               <li>
@@ -275,7 +328,7 @@ function EgovHeader() {
                   to={URL.SUPPORT_APPLY}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
-                  서비스 신청
+                  챗봇
                 </NavLink>
               </li>
             </ul>
@@ -377,7 +430,8 @@ function EgovHeader() {
           )}
         </div>
       </div>
-      {/* <!-- All menu : mobile --> */}
+
+      {/* 여기는 모바일이라서 신경 안써도됩니다 */}
       <div className="all_menu Mobile closed">
         <div className="user_info_m">
           {/* 로그아웃 : 로그인 정보 있을때 */}
@@ -477,34 +531,8 @@ function EgovHeader() {
           <h3>
             <Link to={URL.SUPPORT}>고객지원</Link>
           </h3>
-          <div className="submenu closed">
-            <ul>
-              <li>
-                <NavLink
-                  to={URL.SUPPORT_DOWNLOAD}
-                  className={({ isActive }) => (isActive ? "cur" : "")}
-                >
-                  자료실
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={URL.SUPPORT_QNA}
-                  className={({ isActive }) => (isActive ? "cur" : "")}
-                >
-                  묻고 답하기
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={URL.SUPPORT_APPLY}
-                  className={({ isActive }) => (isActive ? "cur" : "")}
-                >
-                  서비스 신청
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+
+          
           <h3>
             <Link to={URL.INFORM}>알림마당</Link>
           </h3>
@@ -609,6 +637,52 @@ function EgovHeader() {
         </div>
       </div>
       {/* <!--// All menu --> */}
+
+
+    {/* 고객지원 메뉴 (클릭 시 열림) */}
+    <div className="support_menu closed">
+
+        {/* ✨ 닫기 버튼 추가 */}
+        <button
+          type="button"
+          className="btn btnSupportClose"
+          title="고객지원 닫기"
+          onClick={closeSupportMenu}
+        >
+          ✕
+        </button>
+      <h2 className="blind">고객지원 전체메뉴</h2>
+      <div className="inner row"> 
+        {/* 메뉴 영역 */}
+        <div className="col">
+          <h3>변환</h3>
+          <ul>
+            <li><NavLink to="/support/transform/transformation">변환</NavLink></li>
+            <li><NavLink to="/support/transform/view_transform">변환 이력 조회</NavLink></li>
+            <li><NavLink to="/support/trasnform/view_test">테스트 이력 조회</NavLink></li>
+            <li><NavLink to="/support/transform/download">다운로드</NavLink></li>
+          </ul>
+        </div>
+        <div className="col">
+          <h3>보안</h3>
+          <ul>
+            <li><NavLink to="/support/security/scan">보안 분석하기</NavLink></li>
+            <li><NavLink to="/support/security/download">다운로드</NavLink></li>
+            <li><NavLink to="/support/security/report">분석 결과</NavLink></li>
+          </ul>
+        </div>
+        <div className="col">
+          <h3>가이드</h3>
+          <ul>
+            <li><NavLink to="/support/guide/egovframework">전자정부프레임워크</NavLink></li>
+            <li><NavLink to="/support/guide/chatbot">챗봇</NavLink></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
     </div>
     // <!--// header -->
   );
