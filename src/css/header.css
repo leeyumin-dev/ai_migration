@@ -40,7 +40,7 @@
 }
 
 .support_menu .col h3 {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
   color: #2c3e50;
@@ -53,11 +53,13 @@
 }
 
 .support_menu .col ul li a {
-  color: #333;
+  font-size: 17px;
+  color: #666;
   text-decoration: none;
 }
 
 .support_menu .col ul li a:hover {
+  color: #000;
   text-decoration: underline;
 }
 
@@ -65,15 +67,16 @@
 .btn,
 .btnAllMenu,
 .btnSupportClose {
-  font-family: inherit;
-  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif; /* ✅ 햄버거 버튼 글꼴 */
+  font-size: 16px;                         /* ✅ 햄버거 버튼 크기 */
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 8px 12px;
   color: #333;
   transition: all 0.2s ease;
 }
+
 
 .btnSupportClose {
   position: absolute;
