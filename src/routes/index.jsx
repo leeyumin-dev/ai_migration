@@ -48,6 +48,14 @@ import EgovGalleryList from "@/pages/inform/gallery/EgovGalleryList";
 import EgovGalleryDetail from "@/pages/inform/gallery/EgovGalleryDetail";
 import EgovGalleryEdit from "@/pages/inform/gallery/EgovGalleryEdit";
 
+import EgovFaqList from "@/pages/inform/faq/EgovFaqList";
+import EgovFaqDetail from "@/pages/inform/faq/EgovFaqDetail";
+import EgovFaqEdit from "@/pages/inform/faq/EgovFaqEdit";
+
+import EgovQnaList from "@/pages/inform/qna/EgovQnaList";
+import EgovQnaDetail from "@/pages/inform/qna/EgovQnaDetail";
+import EgovQnaEdit from "@/pages/inform/qna/EgovQnaEdit";
+
 //ADMIN
 import EgovAdminScheduleList from "@/pages/admin/schedule/EgovAdminScheduleList";
 import EgovAdminScheduleDetail from "@/pages/admin/schedule/EgovAdminScheduleDetail";
@@ -300,7 +308,7 @@ const SecondRoutes = () => {
         <Route path={URL.SUPPORT_APPLY} element={<EgovSupportApply />} />
 
         {/* INFORM */}
-        <Route path={URL.INFORM} element={<Navigate to={URL.INFORM_DAILY} />} />
+        <Route path={URL.INFORM} element={<Navigate to={URL.INFORM_NOTICE} />} />
 
         <Route path={URL.INFORM_DAILY} element={<EgovDailyList />} />
         <Route path={URL.INFORM_DAILY_DETAIL} element={<EgovDailyDetail />} />
@@ -338,6 +346,38 @@ const SecondRoutes = () => {
         <Route
           path={URL.INFORM_GALLERY_REPLY}
           element={<EgovGalleryEdit mode={CODE.MODE_REPLY} />}
+        />
+        
+        <Route path={URL.INFORM_FAQ} element={<EgovFaqList />} />
+        <Route
+          path={URL.INFORM_FAQ_DETAIL}
+          element={<EgovFaqDetail />}
+        />
+        <Route
+          path={URL.INFORM_FAQ_CREATE}
+          element={<EgovFaqEdit mode={CODE.MODE_CREATE} />}
+        />
+        <Route
+          path={URL.INFORM_FAQ_MODIFY}
+          element={<EgovFaqEdit mode={CODE.MODE_MODIFY} />}
+        />
+
+        <Route path={URL.INFORM_QNA} element={<EgovQnaList />} />
+        <Route
+          path={URL.INFORM_QNA_DETAIL}
+          element={<EgovQnaDetail />}
+        />
+        <Route
+          path={URL.INFORM_QNA_CREATE}
+          element={<EgovQnaEdit mode={CODE.MODE_CREATE} />}
+        />
+        <Route
+          path={URL.INFORM_QNA_MODIFY}
+          element={<EgovQnaEdit mode={CODE.MODE_MODIFY} />}
+        />
+        <Route
+          path={URL.INFORM_QNA_REPLY}
+          element={<EgovQnaEdit mode={CODE.MODE_REPLY} />}
         />
 
         {/* ADMIN */}

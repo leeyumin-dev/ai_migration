@@ -48,6 +48,17 @@ const URL = {
     "/egovframe-template-simple-react/inform/gallery/modify", // 알림마당/사이트갤러리수정
   INFORM_GALLERY_REPLY: "/egovframe-template-simple-react/inform/gallery/reply", // 알림마당/사이트갤러리답글
 
+  INFORM_FAQ: "/egovframe-template-simple-react/inform/faq", // 알림마당/FAQ
+  INFORM_FAQ_DETAIL:
+    "/egovframe-template-simple-react/inform/faq/detail", // 알림마당/FAQ상세
+  INFORM_FAQ_CREATE:
+    "/egovframe-template-simple-react/inform/faq/create", // 알림마당/FAQ등록
+  INFORM_FAQ_MODIFY:
+    "/egovframe-template-simple-react/inform/faq/modify", // 알림마당/FAQ수정
+  // INFORM_FAQ_REPLY: "/egovframe-template-simple-react/inform/faq/reply", // 알림마당/FAQ답글
+
+  
+
   //ADMIN
   ADMIN: "/egovframe-template-simple-react/admin", // 사이트관리
   ADMIN_SCHEDULE: "/egovframe-template-simple-react/admin/schedule", // 사이트관리/일정관리
@@ -79,6 +90,12 @@ const URL = {
   ADMIN_GALLERY_CREATE: "/egovframe-template-simple-react/admin/gallery/create", // 사이트관리/사이트갤러리관리 등록
   ADMIN_GALLERY_MODIFY: "/egovframe-template-simple-react/admin/gallery/modify", // 사이트관리/사이트갤러리관리 수정
   ADMIN_GALLERY_REPLY: "/egovframe-template-simple-react/admin/gallery/reply", // 사이트관리/사이트갤러리관리 답글 등록
+
+  ADMIN_QNA: "/egovframe-template-simple-react/admin/qna", // 사이트관리/QnA관리
+  ADMIN_QNA_DETAIL: "/egovframe-template-simple-react/admin/qna/detail", // 사이트관리/QnA관리 상세
+  ADMIN_QNA_CREATE: "/egovframe-template-simple-react/admin/qna/create", // 사이트관리/QnA관리 등록
+  ADMIN_QNA_MODIFY: "/egovframe-template-simple-react/admin/qna/modify", // 사이트관리/QnA관리 수정
+  ADMIN_QNA_REPLY: "/egovframe-template-simple-react/admin/qna/reply", // 사이트관리/QnA관리 답글 등록
 
   ADMIN_MANAGER: "/egovframe-template-simple-react/admin/manager/", // 사이트관리/사이트관리자 암호변경 기능
 

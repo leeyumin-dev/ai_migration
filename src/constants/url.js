@@ -55,6 +55,17 @@ const URL = {
   INFORM_GALLERY_MODIFY: "/inform/gallery/modify", // 알림마당/사이트갤러리수정
   INFORM_GALLERY_REPLY: "/inform/gallery/reply", // 알림마당/사이트갤러리답글
 
+  INFORM_FAQ: "/inform/faq", // 알림마당/FAQ
+  INFORM_FAQ_DETAIL: "/inform/faq/detail", // 알림마당/FAQ상세
+  INFORM_FAQ_CREATE: "/inform/faq/create", // 알림마당/FAQ등록
+  INFORM_FAQ_MODIFY: "/inform/faq/modify", // 알림마당/FAQ수정
+
+  INFORM_QNA: "/inform/qna", // 알림마당/QnA
+  INFORM_QNA_DETAIL: "/inform/qna/detail", // 알림마당/QnA상세
+  INFORM_QNA_CREATE: "/inform/qna/create", // 알림마당/QnA등록
+  INFORM_QNA_MODIFY: "/inform/qna/modify", // 알림마당/QnA수정
+  INFORM_QNA_REPLY: "/inform/qna/reply", // 알림마당/QnA답글
+
   //ADMIN
   ADMIN: "/admin", // 사이트관리
   ADMIN_SCHEDULE: "/admin/schedule", // 사이트관리/일정관리

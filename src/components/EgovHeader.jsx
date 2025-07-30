@@ -186,8 +186,8 @@ function EgovHeader() {
           {/* 로그아웃 : 로그인 정보 있을때 */}
           {sessionUserId && (
             <>
-              <span className="person">{sessionUserName} </span> 님,{" "}
-              {sessionUserSe} 반갑습니다!.
+              <span className="person">{sessionUserName} </span> 님이,{" "}
+              {sessionUserSe}로 로그인하셨습니다.
               {sessionUserSe === "USR" && (
                 <NavLink
                   to={URL.MYPAGE_MODIFY}
@@ -336,7 +336,7 @@ function EgovHeader() {
           <div className="col">
             <h3>알림마당</h3>
             <ul>
-              <li>
+              {/* <li>
                 <NavLink to={URL.INFORM_DAILY}>오늘의 행사</NavLink>
               </li>
               <li>
@@ -346,21 +346,32 @@ function EgovHeader() {
                 >
                   금주의 행사
                 </NavLink>
+              </li> */}
+              <li>
+                <NavLink to={URL.INFORM_NOTICE}>공지사항</NavLink>
               </li>
               <li>
                 <NavLink
-                  to={URL.INFORM_NOTICE}
+                  to={URL.INFORM_FAQ}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
-                  공지사항
+                  FAQ
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   to={URL.INFORM_GALLERY}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
                   사이트 갤러리
+                </NavLink>
+              </li> */}
+              <li>
+                <NavLink
+                  to={URL.INFORM_QNA}
+                  className={({ isActive }) => (isActive ? "cur" : "")}
+                >
+                  Q&A
                 </NavLink>
               </li>
             </ul>
