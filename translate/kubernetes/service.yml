@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: translator-agent
+  labels:
+    app: translator-agent
+spec:
+  selector:
+    app: translator-agent
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8001
+  type: ClusterIP

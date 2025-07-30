@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: translator-agent
+  labels:
+    app: translator-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: translator-agent
+  template:
+    metadata:
+      labels:
+        app: translator-agent
+    spec:
+      containers:
+        - name: translator-agent
+          image: leeyumin/translator-agent:test4
+          ports:
+            - containerPort: 8001
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+          # env:
+          #   # 예: OpenAI API 키 사용 시
+          #   - name: OPENAI_API_KEY
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: openai-secret
+          #         key: api-key

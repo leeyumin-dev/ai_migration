@@ -1,0 +1,92 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: user
+          uri: http://localhost:8082
+          predicates:
+            - Path=/users/**, 
+        - id:  noticeboard
+          uri: http://localhost:8083
+          predicates:
+            - Path=/posts/**, /postQueries/**, 
+        - id: agent
+          uri: http://localhost:8084
+          predicates:
+            - Path=/agents/**, 
+        - id: admin
+          uri: http://localhost:8085
+          predicates:
+            - Path=/tokens/**, 
+        - id: platform
+          uri: http://localhost:8086
+          predicates:
+            - Path=/conversions/**, /testLogs/**, /conversionLogs/**, /securities/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: user
+          uri: http://user:8080
+          predicates:
+            - Path=/users/**, 
+        - id:  noticeboard
+          uri: http://noticeboard:8080
+          predicates:
+            - Path=/posts/**, /postQueries/**, 
+        - id: agent
+          uri: http://agent:8080
+          predicates:
+            - Path=/agents/**, 
+        - id: admin
+          uri: http://admin:8080
+          predicates:
+            - Path=/tokens/**, 
+        - id: platform
+          uri: http://platform:8080
+          predicates:
+            - Path=/conversions/**, /testLogs/**, /conversionLogs/**, /securities/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
