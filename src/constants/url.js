@@ -19,14 +19,24 @@ const URL = {
   INTRO_WORKS: "/intro/works", // 정보마당/주요사업소개
   INTRO_SERVICE: "/intro/service", // 정보마당/주요서비스소개
 
-  //SUPPORT
+  //SUPPORT --> 고객지원
   SUPPORT: "/support", // 고객지원
-  SUPPORT_DOWNLOAD: "/support/download", // 고객지원/자료실
-  SUPPORT_DOWNLOAD_DETAIL: "/support/download/detail", // 고객지원/자료실/상세
-  SUPPORT_DOWNLOAD_CREATE: "/support/download/create", // 고객지원/자료실/등록
-  SUPPORT_QNA: "/support/qna", // 고객지원/묻고답하기
-  SUPPORT_QNA_DETAIL: "/support/qna/detail", // 고객지원/묻고답하기/상세
-  SUPPORT_APPLY: "/support/apply", // 고객지원/서비스신청
+  SUPPORT_TRANSFORM: "/support/transform", // 고객지원/변환
+  SUPPORT_SECURITY: "/support/security", // 고객지원/보안
+  SUPPORT_GUIDE: "/support/guide", // 고객지원/가이드
+
+  SUPPORT_TRANSFORM_TRANSFORMATION : "/support/transform/transformation", // 고객지원/변환/변환
+  SUPPORT_TRANSFORM_VIEW_TRANSFORMAITON : "/support/transform/view_transform", // 고객지원/변환/변환 이력 조회
+  SUPPORT_TRANSFORM_VIEW_TEST : "/support/transform/view_test", // 고객지원/변환/테스트 이력 조회
+  SUPPORT_TRANSFORM_DOWNLOAD : "/support/transform/download", // 고객지원/변환/다운로드
+
+  SUPPORT_SECURITY_SCAN : "/support/security/scan", // 고객지원/보안/보안 분석하기
+  SUPPORT_SECURITY_DOWNLOAD : "/support/security/download", // 고객지원/보안/다운로드
+  SUPPORT_SECURITY_REPORT : "/support/security/report", // 고객지원/보안/분석 결과
+
+  SUPPORT_GUIDE_EGOVFRAMEWORK: "/support/guide/egovframework", // 고객지원/가이드/전자정부프레임워크
+  SUPPORT_GUIDE_CHATBOT: "/support/guide/chatbot", // 고객지원/가이드/챗봇
+
 
   //INFORM
   INFORM: "/inform", // 알림마당
