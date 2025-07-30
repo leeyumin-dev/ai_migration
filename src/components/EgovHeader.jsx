@@ -328,7 +328,7 @@ function EgovHeader() {
                   to={URL.SUPPORT_APPLY}
                   className={({ isActive }) => (isActive ? "cur" : "")}
                 >
-                  챗봇
+                  가이드
                 </NavLink>
               </li>
             </ul>
