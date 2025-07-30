@@ -9,30 +9,6 @@ function EgovLeftNavAdmin() {
         <ul className="menu4">
           <li>
             <NavLink
-              to={URL.ADMIN_SCHEDULE}
-              className={({ isActive }) => (isActive ? "cur" : "")}
-            >
-              일정관리
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={URL.ADMIN_BOARD}
-              className={({ isActive }) => (isActive ? "cur" : "")}
-            >
-              게시판생성관리
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={URL.ADMIN_USAGE}
-              className={({ isActive }) => (isActive ? "cur" : "")}
-            >
-              게시판사용관리
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to={URL.ADMIN_NOTICE}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
@@ -41,18 +17,18 @@ function EgovLeftNavAdmin() {
           </li>
           <li>
             <NavLink
-              to={URL.ADMIN_GALLERY}
+              to={URL.ADMIN_FAQ}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              사이트갤러리관리
+              FAQ관리
             </NavLink>
           </li>
           <li>
             <NavLink
-              to={URL.ADMIN_MANAGER}
+              to={URL.ADMIN_QNA}
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
-              사이트관리자 암호변경
+              Q&A관리
             </NavLink>
           </li>
           <li>
@@ -61,6 +37,14 @@ function EgovLeftNavAdmin() {
               className={({ isActive }) => (isActive ? "cur" : "")}
             >
               회원관리
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={URL.ADMIN_MANAGER}
+              className={({ isActive }) => (isActive ? "cur" : "")}
+            >
+              관리자관리
             </NavLink>
           </li>
         </ul>

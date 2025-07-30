@@ -343,7 +343,7 @@ const SecondRoutes = () => {
         {/* ADMIN */}
         <Route
           path={URL.ADMIN}
-          element={<Navigate to={URL.ADMIN_SCHEDULE} />}
+          element={<Navigate to={URL.ADMIN_NOTICE} />}
         />
         <Route path={URL.ADMIN_SCHEDULE} element={<EgovAdminScheduleList />} />
         <Route

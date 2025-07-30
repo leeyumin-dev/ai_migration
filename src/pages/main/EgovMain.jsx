@@ -21,7 +21,7 @@ function EgovMain(props) {
   const [gallaryBoard, setGallaryBoard] = useState();
   const [noticeListTag, setNoticeListTag] = useState();
   const [gallaryListTag, setGallaryListTag] = useState();
-
+  
   useEffect(() => {
     initPage();
   });

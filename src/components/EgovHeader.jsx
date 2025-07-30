@@ -365,56 +365,33 @@ function EgovHeader() {
               </li>
             </ul>
           </div>
+           {/* admin 전용 게시판 관리 부분 part */}
           {sessionUserSe === "ADM" && (
             <div className="col">
               <h3>사이트관리</h3>
               <ul>
                 <li>
                   <NavLink
-                    to={URL.ADMIN_SCHEDULE}
-                    className={({ isActive }) => (isActive ? "cur" : "")}
-                  >
-                    일정관리
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to={URL.ADMIN_BOARD}
-                    className={({ isActive }) => (isActive ? "cur" : "")}
-                  >
-                    게시판생성관리
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to={URL.ADMIN_USAGE}
-                    className={({ isActive }) => (isActive ? "cur" : "")}
-                  >
-                    게시판사용관리
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
                     to={URL.ADMIN_NOTICE}
                     className={({ isActive }) => (isActive ? "cur" : "")}
                   >
-                    공지사항관리
+                    공지사항 관리
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to={URL.ADMIN_GALLERY}
+                    to={URL.ADMIN_FAQ}
                     className={({ isActive }) => (isActive ? "cur" : "")}
                   >
-                    사이트갤러리관리
+                    FAQ 관리
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to={URL.ADMIN_MANAGER}
+                    to={URL.ADMIN_QNA}
                     className={({ isActive }) => (isActive ? "cur" : "")}
                   >
-                    사이트관리자 암호변경
+                    Q&A 관리
                   </NavLink>
                 </li>
                 <li>
@@ -422,12 +399,22 @@ function EgovHeader() {
                     to={URL.ADMIN_MEMBERS}
                     className={({ isActive }) => (isActive ? "cur" : "")}
                   >
-                    회원관리
+                    회원 관리
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={URL.ADMIN_MANAGER}
+                    className={({ isActive }) => (isActive ? "cur" : "")}
+                  >
+                    관리자 관리
                   </NavLink>
                 </li>
               </ul>
             </div>
           )}
+
+          
         </div>
       </div>
 
