@@ -14,12 +14,14 @@ class State(TypedDict):
 
 def call_agent(request):
     '''
-    request: {"id":1,"agentName":"TRANSLATOR"}
+    request: {'eventType': 'ConversionRequested', 'timestamp': 1753840526769, 'userId': 100, 'filePath': 'test', 'conversionType': 'CODE', 'inputeGovFrameVer': '3.8', 'outputeGovFrameVer': '3.10', 'isTestCode': True}
     '''
-    if request['agentName'] == 'TRANSLATOR':
-        producer.send_message('translator-topic', asdict(ToTranslator(id=request['id'])))
-    elif request['agentName'] == 'AUDITOR':
-        producer.send_message('audithor-topic', asdict(ToAuditor(id=request['id'])))
+    if request['eventType'] == 'ConversionRequested':
+        producer.send_message('conversion', asdict(ToTranslator(id=request['id'])))
+    elif request['agentName'] == 'SecurityRequested':
+        producer.send_message('security', asdict(ToAuditor(id=request['id'])))
+    elif request['agentName'] == 'ChatbotRequested':
+        producer.send_message('chatbot', asdict(ToAuditor(id=request['id'])))
 
 
 

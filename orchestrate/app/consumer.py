@@ -30,6 +30,12 @@ class MessageConsumer:
                 if message.error():
                     print(f"Kafka error: {message.error()}")
                 else:
+                    print("Headers:")
+                    if message.headers():
+                        for header in message.headers():
+                            key, value = header
+                            print(f"  {key}: {value.decode('utf-8') if value else None}")
+                            
                     self.handle_message(message)
         except KafkaException as e:
             self.logger.error(e)
@@ -41,8 +47,8 @@ class MessageConsumer:
             request = json.loads(message.value().decode('utf-8'))
 
             self.logger.info(f"{message.topic()} | key: {message.key()} | value: {request}")
-                        
-            if message.topic() == 'api-topic':
+
+            if message.topic() == 'backend':
                 call_agent(request)
 
         except Exception as e:

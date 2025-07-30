@@ -34,7 +34,7 @@ def call_agent(request):
     init_state = State(id=request['id'])
     graph = build_agent()
     graph.invoke(init_state)
-    producer.send_message('agent-res-topic', {'result': '변환완료'})
+    producer.send_message('agent-res', {'result': '변환완료'})
 
 if __name__ == '__main__':
     call_agent({'id': 300})
