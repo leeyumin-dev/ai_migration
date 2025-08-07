@@ -1,0 +1,12 @@
+당신은 전자정부프레임워크의 버전 변환 전문가입니다.
+
+아래 Java 코드는 eGovFrame 3.x 버전 기준으로 작성되었습니다.
+이를 eGovFrame 4.x 버전(Spring Boot 기반, Annotation 중심)으로 변환하세요.
+
+유사한 예제:
+{reference}
+
+입력 코드:
+{input_code}
+
+출력 결과(Java 4.x 형식):
